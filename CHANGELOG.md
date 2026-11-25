@@ -26,6 +26,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Manual install zip `deduko_1.1.0_manuale.zip`, built by `tools/build.py
   base` next to the KPM package. Extract it into the Kindle root and open
   "Deduko" from the library; each launch writes `deduko/debug.log`.
+- KPM repository in `kpm/`: with Wi-Fi on, `;kpm add-repo
+  https://raw.githubusercontent.com/nardoman/deduko/main/kpm/manifest.json`
+  then `;kpm install deduko`. `tools/build.py repo` adds a new version to it.
 
 ### Changed
 

@@ -73,40 +73,32 @@ pair of categories has its own block.
 
 ## Requirements
 
-- A jailbroken Kindle. KPM is needed only for method 1 (KPM package); the
-  manual zip (method 2) works without it.
+- A jailbroken Kindle. KPM is needed only for install methods 2 and 3; the
+  manual zip (method 1) works without it.
 - A firmware with Mesquite web apps and `/var/local/appreg.db` (the same
   requirements as other Mesquite apps such as KWordle and IllusionChess).
 
 ## Install
 
-There are two ways to install Deduko. Both install the app to the same place
-(`/var/local/mesquite/deduko`, app id `com.nardoman.deduko`), so progress is
-shared and an upgrade from 1.0.0 keeps it.
+There are three ways to install Deduko. All of them install the app to the
+same place (`/var/local/mesquite/deduko`, app id `com.nardoman.deduko`), so
+progress is shared and switching method or upgrading keeps it.
 
-### Method 1: KPM package
+| Method | Needs | Status |
+|---|---|---|
+| 1. Manual zip | USB cable | tested on the author's Kindle |
+| 2. KPM, from this repository | KPM, Wi-Fi | not tested on a device yet |
+| 3. KPM, from a local file | KPM, USB cable | did not work on the author's Kindle (KPM 0.2.4) |
 
-1. Copy `deduko_1.1.0_kindleany.kpkg` (from `dist/`, or from the release
-   page) to the root of the Kindle USB storage.
-2. In the Kindle search bar, run:
+The files are attached to each
+[release](https://github.com/nardoman/deduko/releases) (they are also built
+into `dist/` by `tools/build.py base`).
 
-   ```
-   ;kpm install file:///mnt/us/deduko_1.1.0_kindleany.kpkg
-   ```
-
-3. The install hook copies the scriptlet `deduko.sh` to `/mnt/us/documents/`,
-   so a "Deduko" item appears in the library, and creates the folder
-   `/mnt/us/deduko/packs/` for extra case packs.
-
-Note: on the author's Kindle (KPM 0.2.4) `;kpm install file:///...` did not
-work, for a reason not yet known. If it does not work for you either, use
-method 2.
-
-### Method 2: manual zip
+### Method 1: manual zip
 
 1. Connect the Kindle by USB and open its storage: the root is the folder
    that contains `documents`.
-2. Extract `deduko_1.1.0_manuale.zip` (from `dist/`) into that root. It adds
+2. Extract `deduko_1.1.0_manuale.zip` into that root. It adds
    `documents/deduko_manuale.sh` (the library item "Deduko"),
    `deduko/pkg/` (the app and its hooks) and the empty folder
    `deduko/packs/` for extra case packs. Overwrite the files of an older
@@ -115,6 +107,42 @@ method 2.
 4. If it does not start, read `deduko/debug.log` on the USB storage. Every
    launch rewrites it with the date, the user, whether `sqlite3` and
    `lipc-set-prop` were found, the output of `launch.sh` and its exit code.
+
+### Method 2: KPM, from this repository
+
+This repository is also a KPM repository: `kpm/manifest.json` lists the
+package and `kpm/packages/deduko/artifacts/` holds it. KPM reads it straight
+from GitHub, no GitHub Pages needed. With Wi-Fi on, run in the Kindle search
+bar:
+
+```
+;kpm add-repo https://raw.githubusercontent.com/nardoman/deduko/main/kpm/manifest.json
+;kpm install deduko
+```
+
+Later versions install with `;kpm upgrade`. The install hook copies the
+scriptlet `deduko.sh` to `/mnt/us/documents/`, so a "Deduko" item appears in
+the library, and creates `/mnt/us/deduko/packs/` for extra case packs.
+
+If you used method 1 before, delete `documents/deduko_manuale.sh`, or the
+library shows two "Deduko" items. Progress is kept.
+
+This method has not been tried on a device yet. If it fails, run the
+install again with `;kpm -d install deduko` (debug output), open an issue with
+what it prints, and use method 1.
+
+### Method 3: KPM, from a local file
+
+1. Copy `deduko_1.1.0_kindleany.kpkg` to the `documents` folder of the Kindle
+   USB storage.
+2. In the Kindle search bar, run:
+
+   ```
+   ;kpm install file:///mnt/us/documents/deduko_1.1.0_kindleany.kpkg
+   ```
+
+On the author's Kindle (KPM 0.2.4) this did not work, for a reason not yet
+known.
 
 ## Launch
 
@@ -357,6 +385,7 @@ hooks (Git for Windows `sh.exe` works). Run Python with `-B` so no
 | `python -B tools/e2e_ui.py --shots <dir>` | end-to-end UI test in headless Chrome at 600x800 and 1236x1648, in Italian and English (tools, tap-to-erase, auto-exclude, error mode, codes and keypad, 1.0.0 saves); screenshots go to `<dir>` |
 | `python -B tools/test_launch.py` | after `build.py base`: checks the manual zip's layout and LF endings, runs `sh -n` on the scripts and `launch.sh` (with `DEDUKO_NO_LAUNCH=1`) from the extracted zip and from `package/`, and checks the kpkg version |
 | `python -B tools/build.py pack <packDir> <outDir>` | build a case pack KPM package |
+| `python -B tools/build.py repo` | add the current `dist/` kpkg to the KPM repository in `kpm/` (run after `base` for every release) |
 | `sh -n package/launch.sh` | syntax check of a hook |
 
 The app can be tried on a desktop by opening `package/app/index.html` in
