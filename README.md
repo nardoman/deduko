@@ -87,7 +87,7 @@ progress is shared and switching method or upgrading keeps it.
 | Method | Needs | Status |
 |---|---|---|
 | 1. Manual zip | USB cable | tested on the author's Kindle |
-| 2. KPM, from this repository | KPM, Wi-Fi | not tested on a device yet |
+| 2. KPM, from this repository | KPM, Wi-Fi, USB cable once | tested on the author's Kindle with the setup booklet |
 | 3. KPM, from a local file | KPM, USB cable | did not work on the author's Kindle (KPM 0.2.4) |
 
 The files are attached to each
@@ -112,13 +112,33 @@ into `dist/` by `tools/build.py base`).
 
 This repository is also a KPM repository: `kpm/manifest.json` lists the
 package and `kpm/packages/deduko/artifacts/` holds it. KPM reads it straight
-from GitHub, no GitHub Pages needed. With Wi-Fi on, run in the Kindle search
-bar:
+from GitHub, no GitHub Pages needed.
+
+The easy way is the setup booklet, which saves typing the long repository URL
+in the search bar (the search bar may not pass it on intact):
+
+1. Download
+   [`deduko_kpm_setup.sh`](https://github.com/nardoman/deduko/raw/main/kpm/deduko_kpm_setup.sh)
+   (also attached to each release).
+2. Connect the Kindle by USB and copy it into the `documents` folder.
+3. Eject the Kindle, turn Wi-Fi on and open "Deduko - KPM setup" from the
+   library. It adds the repository, updates the index and installs Deduko,
+   showing each step on screen.
+4. Open "Deduko" from the library. The setup booklet is no longer needed and
+   can be deleted.
+
+Every run writes `deduko/kpm-setup.log` on the USB storage (KPM version, the
+repositories, and the debug output of `add-repo` and `install`): attach it to
+an issue if something fails.
+
+Without the booklet, run in the Kindle search bar, with Wi-Fi on:
 
 ```
 ;kpm add-repo https://raw.githubusercontent.com/nardoman/deduko/main/kpm/manifest.json
 ;kpm install deduko
 ```
+
+`;kpm list-repo` shows whether the repository (id `nardoman`) was added.
 
 Later versions install with `;kpm upgrade`. The install hook copies the
 scriptlet `deduko.sh` to `/mnt/us/documents/`, so a "Deduko" item appears in
@@ -126,10 +146,6 @@ the library, and creates `/mnt/us/deduko/packs/` for extra case packs.
 
 If you used method 1 before, delete `documents/deduko_manuale.sh`, or the
 library shows two "Deduko" items. Progress is kept.
-
-This method has not been tried on a device yet. If it fails, run the
-install again with `;kpm -d install deduko` (debug output), open an issue with
-what it prints, and use method 1.
 
 ### Method 3: KPM, from a local file
 

@@ -29,6 +29,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - KPM repository in `kpm/`: with Wi-Fi on, `;kpm add-repo
   https://raw.githubusercontent.com/nardoman/deduko/main/kpm/manifest.json`
   then `;kpm install deduko`. `tools/build.py repo` adds a new version to it.
+- Setup booklet `kpm/deduko_kpm_setup.sh`: copied to `documents` and opened
+  from the library, it adds the repository and installs Deduko with Wi-Fi,
+  without typing the URL, and logs to `deduko/kpm-setup.log`.
 
 ### Changed
 
