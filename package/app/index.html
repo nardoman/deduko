@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="utf-8">
+  <title>Deduko</title>
+  <link href="css/deduko.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+    if (window.kindle && window.kindle.appmgr) {
+      window.kindle.appmgr.ongo = function () {
+        try {
+          window.kindle.messaging.sendMessage('com.lab126.chromebar', 'configureChrome', {
+            appId: 'com.nardoman.deduko',
+            topNavBar: {
+              template: 'title',
+              title: 'Deduko',
+              buttons: [
+                { id: 'KPP_MORE', state: 'enabled', handling: 'system' },
+                { id: 'KPP_CLOSE', state: 'enabled', handling: 'system' }
+              ]
+            }
+          });
+        } catch (e) {}
+      };
+    }
+  </script>
+  <script type="text/javascript" src="js/engine.js"></script>
+  <script type="text/javascript" src="js/registry.js"></script>
+  <script type="text/javascript" src="generated/index.js"></script>
+  <script type="text/javascript" src="js/ui.js"></script>
+</head>
+<body onload="DEDUKO.load(window.DEDUKO_INDEX, DEDUKO.ui.start)">
+  <div id="app"></div>
+  <div id="measure"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+ {"lang": "it", "clue": {"t": "or", "a": "suspect.elena", "b": "weapon.rope", "c": "weapon.poison"}, "text": "Elena aveva la corda o il veleno."},
+ {"lang": "it", "clue": {"t": "or", "a": "room.garden", "b": "suspect.anna", "c": "suspect.carla"}, "text": "In giardino c'era Anna o Carla."},
+ {"lang": "it", "clue": {"t": "pair", "a": "motive.inheritance", "b": "motive.revenge", "c": "time.h23", "d": "time.h20"}, "text": "Chi voleva l'eredità e chi agiva per vendetta sono arrivati uno alle 23:00 e l'altro alle 20:00."},
+ {"lang": "it", "clue": {"t": "pair", "a": "suspect.anna", "b": "suspect.carla", "c": "time.h20", "d": "time.h21"}, "text": "Anna e Carla sono arrivate una alle 20:00 e l'altra alle 21:00."},
+ {"lang": "it", "clue": {"t": "pair", "a": "weapon.knife", "b": "weapon.poison", "c": "suspect.giulia", "d": "suspect.cuoca"}, "text": "Giulia e la cuoca avevano una il coltello e l'altra il veleno."},
+ {"lang": "it", "clue": {"t": "or", "a": "suspect.conte", "b": "room.library", "c": "room.study"}, "text": "Il conte era in biblioteca o nello studio."},
+ {"lang": "it", "clue": {"t": "or", "a": "suspect.anna", "b": "motive.blackmail", "c": "motive.money"}, "text": "Anna era ricattata o agiva per denaro."},
+ {"lang": "it", "clue": {"t": "pair", "a": "suspect.anna", "b": "suspect.bruno", "c": "motive.blackmail", "d": "motive.money"}, "text": "Tra Anna e Bruno, uno era ricattato e l'altro agiva per denaro."},
+ {"lang": "it", "clue": {"t": "pair", "a": "room.garden", "b": "room.study", "c": "suspect.anna", "d": "suspect.dario"}, "text": "Anna e Dario erano uno in giardino e l'altro nello studio."},
+ {"lang": "it", "clue": {"t": "pair", "a": "time.h18", "b": "time.h23", "c": "suspect.carla", "d": "suspect.dario"}, "text": "Carla e Dario sono arrivati uno alle 18:00 e l'altro alle 23:00."},
+ {"lang": "it", "clue": {"t": "pair", "a": "motive.blackmail", "b": "motive.money", "c": "suspect.anna", "d": "suspect.elena"}, "text": "Tra Anna ed Elena, una era ricattata e l'altra agiva per denaro."},
+ {"lang": "en", "clue": {"t": "or", "a": "suspect.elena", "b": "weapon.rope", "c": "weapon.poison"}, "text": "Elena had either the rope or the poison."},
+ {"lang": "en", "clue": {"t": "or", "a": "room.garden", "b": "suspect.anna", "c": "suspect.carla"}, "text": "Either Anna or Carla was in the garden."},
+ {"lang": "en", "clue": {"t": "pair", "a": "motive.inheritance", "b": "motive.revenge", "c": "time.h23", "d": "time.h20"}, "text": "Of the person who wanted the inheritance and the person who acted out of revenge, one arrived at 11 pm and the other at 8 pm."},
+ {"lang": "en", "clue": {"t": "or", "a": "suspect.conte", "b": "room.library", "c": "room.study"}, "text": "The count was either in the library or in the study."},
+ {"lang": "en", "clue": {"t": "pair", "a": "suspect.anna", "b": "suspect.bruno", "c": "motive.blackmail", "d": "motive.money"}, "text": "Of Anna and Bruno, one was being blackmailed and the other acted for money."}
+]

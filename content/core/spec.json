@@ -1,0 +1,38 @@
+{
+ "id": "core",
+ "version": [1, 0, 0],
+ "cases": [
+  {"id": "c1", "difficulty": 1, "seed": 11, "categories": [
+   {"id": "suspect", "items": ["anna", "bruno", "carla", "dario"]},
+   {"id": "weapon", "items": ["knife", "rope", "candlestick", "pistol"]},
+   {"id": "room", "items": ["library", "kitchen", "garden", "cellar"]}]},
+  {"id": "c2", "difficulty": 2, "seed": 22, "categories": [
+   {"id": "suspect", "items": ["anna", "bruno", "carla", "dario", "elena"]},
+   {"id": "weapon", "items": ["knife", "rope", "candlestick", "pistol", "poison"]},
+   {"id": "room", "items": ["library", "kitchen", "garden", "cellar", "study"]}]},
+  {"id": "c3", "difficulty": 3, "seed": 33, "categories": [
+   {"id": "suspect", "items": ["conte", "cuoca", "fabio", "giulia"]},
+   {"id": "weapon", "items": ["knife", "rope", "poison", "wrench"]},
+   {"id": "motive", "items": ["money", "jealousy", "revenge", "blackmail"]},
+   {"id": "time", "ordered": true, "items": ["h20", "h21", "h22", "h23"]}]},
+  {"id": "c4", "difficulty": 4, "seed": 44, "categories": [
+   {"id": "suspect", "items": ["anna", "bruno", "elena", "conte", "cuoca"]},
+   {"id": "room", "items": ["library", "kitchen", "garden", "cellar", "ballroom"]},
+   {"id": "motive", "items": ["money", "jealousy", "revenge", "fear", "inheritance"]},
+   {"id": "time", "ordered": true, "items": ["h19", "h20", "h21", "h22", "h23"]}]},
+  {"id": "c5", "difficulty": 5, "seed": 55, "categories": [
+   {"id": "suspect", "items": ["bruno", "carla", "elena", "giulia", "cuoca"]},
+   {"id": "weapon", "items": ["knife", "rope", "candlestick", "pistol", "poison"]},
+   {"id": "room", "items": ["library", "kitchen", "study", "cellar", "ballroom"]},
+   {"id": "motive", "items": ["money", "jealousy", "revenge", "blackmail", "inheritance"]},
+   {"id": "time", "ordered": true, "items": ["h19", "h20", "h21", "h22", "h23"]}]}
+ ],
+ "settings": [
+  {"id": "manor", "code": 1, "categories": [
+   {"id": "suspect", "items": ["anna", "bruno", "carla", "dario", "conte", "cuoca"]},
+   {"id": "weapon", "items": ["knife", "rope", "candlestick", "pistol", "poison", "wrench"]},
+   {"id": "room", "items": ["library", "kitchen", "garden", "cellar", "study", "ballroom"]},
+   {"id": "motive", "items": ["money", "jealousy", "revenge", "fear", "blackmail", "inheritance"]},
+   {"id": "time", "ordered": true, "items": ["h18", "h19", "h20", "h21", "h22", "h23"]}]}
+ ]
+}

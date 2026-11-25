@@ -1,0 +1,398 @@
+/* Deduko styles for Kindle Mesquite (WebKit 533): no flexbox, calc or vw.
+   Sizes that depend on the screen are set inline by js/ui.js. */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+}
+body {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: none;
+}
+#app {
+  position: static;
+  line-height: 1.3;
+}
+#measure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  line-height: 1.3;
+}
+.mi {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- common ---------- */
+.apptitle {
+  font-size: 1.6em;
+  font-weight: bold;
+  padding: 0 0 0.2em 0;
+}
+.h1 {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0.2em 0;
+}
+.sect {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid #000;
+  padding: 0.5em 0 0.15em 0;
+}
+.packh {
+  font-weight: bold;
+  font-style: italic;
+  padding: 0.4em 0 0.1em 0;
+}
+.note {
+  padding: 0.5em 0;
+}
+.btn {
+  display: inline-block;
+  border: 2px solid #000;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  padding: 0.25em 0.7em;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn.big {
+  padding: 0.4em 1.4em;
+  font-size: 1.1em;
+}
+.btn.off {
+  color: #888;
+  border-color: #888;
+}
+table.bar {
+  width: 100%;
+  border-collapse: collapse;
+}
+table.bar td {
+  padding: 0.2em 0;
+  vertical-align: middle;
+}
+table.bar td.l { text-align: left; }
+table.bar td.c { text-align: center; font-weight: bold; }
+table.bar td.r { text-align: right; white-space: nowrap; }
+.pg {
+  display: inline-block;
+  padding: 0 0.4em;
+}
+
+/* ---------- difficulty balls and language tags ---------- */
+.ball {
+  display: inline-block;
+  border: 2px solid #000;
+  background: #fff;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+.ball.on {
+  background: #000;
+}
+.tag {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 0 0.2em;
+  margin-left: 0.2em;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+/* ---------- home ---------- */
+.row {
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+table.rt {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.dim td.st { white-space: normal; }
+table.rt td {
+  padding: 0.4em 0.15em;
+  vertical-align: middle;
+}
+table.rt td.tt { font-weight: bold; }
+table.rt td.bb { white-space: nowrap; }
+table.rt td.lt { white-space: nowrap; text-align: center; }
+table.rt td.st { white-space: nowrap; text-align: right; font-size: 0.85em; }
+.dim, .dim .tag {
+  color: #777;
+  border-color: #777;
+}
+.dim .ball { border-color: #777; }
+.dim .ball.on { background: #777; }
+.setb {
+  padding: 0.3em 0 0.2em 0;
+}
+.sett {
+  font-weight: bold;
+  padding: 0.1em 0 0.3em 0;
+}
+table.gt {
+  border-collapse: collapse;
+}
+table.gt td {
+  padding: 0 0.5em 0.3em 0;
+  text-align: center;
+  vertical-align: top;
+}
+table.gt .btn {
+  padding: 0.35em 0.5em;
+}
+.small {
+  font-size: 0.8em;
+}
+
+/* ---------- language ---------- */
+.lang-row {
+  border-bottom: 1px solid #000;
+  padding: 0.6em 0.2em;
+  font-size: 1.15em;
+  cursor: pointer;
+}
+.lang-row.sel {
+  font-weight: bold;
+}
+
+/* ---------- intro ---------- */
+.story {
+  padding: 0.4em 0 0.8em 0;
+  line-height: 1.4;
+}
+
+/* ---------- game ---------- */
+table.grid {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+table.grid th {
+  font-weight: bold;
+  padding: 0;
+  border: 1px solid #000;
+}
+table.grid th.corner {
+  text-align: left;
+  vertical-align: bottom;
+  padding: 0 0.2em 0.2em 0.2em;
+  border-right: 3px solid #000;
+}
+table.grid th.cat {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 0.1em 0.1em;
+}
+table.grid th.rh {
+  vertical-align: bottom;
+}
+table.grid th.lbl {
+  text-align: left;
+  white-space: nowrap;
+  padding: 0 0.2em;
+  border-right: 3px solid #000;
+}
+table.grid .bl {
+  border-left: 3px solid #000;
+}
+.rw {
+  position: relative;
+  overflow: visible;
+}
+.rot {
+  position: absolute;
+  display: block;
+  white-space: nowrap;
+  font-weight: bold;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+table.grid td.cell {
+  border: 1px solid #000;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+table.grid td.bl {
+  border-left: 3px solid #000;
+}
+table.grid th.band {
+  vertical-align: top;
+}
+table.grid .bt {
+  border-top: 3px solid #000;
+}
+table.grid td.void {
+  border-right: none;
+  border-bottom: none;
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
+}
+table.grid td.void .status {
+  line-height: 1.3;
+}
+#game-title {
+  white-space: normal;
+  word-wrap: break-word;
+}
+.btn.tool {
+  min-width: 1em;
+  text-align: center;
+  margin-right: 0.15em;
+  padding: 0.25em 0.5em;
+}
+.btn.sel {
+  background: #000;
+  color: #fff;
+}
+.tdot {
+  display: inline-block;
+  background: #000;
+  vertical-align: middle;
+}
+.btn.sel .tdot {
+  background: #fff;
+}
+.btn.undo {
+  margin-left: 0.5em;
+  padding: 0.25em 0.5em;
+}
+.btn.tool.auto {
+  margin-left: 0.35em;
+}
+#game-code {
+  font-weight: bold;
+  padding: 0 0 0.3em 0;
+}
+#status-flash {
+  font-weight: bold;
+  padding: 0 0 0.3em 0;
+}
+
+/* ---------- intro mode ---------- */
+.modes {
+  padding: 0.6em 0 0.8em 0;
+}
+.btn.mode {
+  margin-right: 0.8em;
+  padding: 0.4em 1em;
+}
+#intro-mode {
+  font-weight: bold;
+  padding: 0.6em 0 0.8em 0;
+}
+
+/* ---------- code keypad ---------- */
+#code-display {
+  border: 3px solid #000;
+  margin: 0.5em 0 0.2em 0;
+  padding: 0 0.3em;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#code-msg {
+  height: 2.6em;
+  overflow: hidden;
+  font-weight: bold;
+  text-align: center;
+}
+table.keys {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.4em;
+  table-layout: fixed;
+}
+table.keys td.key {
+  width: 33%;
+  border: 3px solid #000;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  cursor: pointer;
+}
+.x {
+  display: none;
+  font-weight: bold;
+  line-height: 1;
+}
+.dot {
+  display: none;
+  background: #000;
+  vertical-align: middle;
+}
+td.m1 .x { display: inline; }
+td.m2 .dot { display: inline-block; }
+.status {
+  overflow: hidden;
+  padding: 0.3em 0 0 0;
+  line-height: 1.25;
+}
+.status.warn {
+  font-weight: bold;
+}
+table.sb {
+  border-bottom: 3px solid #000;
+}
+table.sb td {
+  padding: 0.3em 0 0.15em 0;
+}
+.sbl {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.clue {
+  padding: 0.25em 0;
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+}
+.cn {
+  font-weight: bold;
+}
+.clue.struck .ct {
+  text-decoration: line-through;
+  color: #666;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+}
+.obox {
+  margin: 0 auto;
+  border: 4px solid #000;
+  background: #fff;
+  padding: 1em;
+  text-align: center;
+}
+.obox .msg {
+  padding: 0.6em 0 1em 0;
+}
+.center {
+  text-align: center;
+  padding: 2em 0;
+}
